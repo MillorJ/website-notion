@@ -5,7 +5,6 @@ import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook'
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
 import { FaMastodon } from '@react-icons/all-files/fa/FaMastodon'
-import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
 import { FaZhihu } from '@react-icons/all-files/fa/FaZhihu'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
@@ -15,8 +14,6 @@ import * as config from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
-
-// TODO: merge the data and icons from PageSocial with the social links in Footer
 
 export const FooterImpl: React.FC = () => {
   const [hasMounted, setHasMounted] = React.useState(false)
@@ -56,11 +53,11 @@ export const FooterImpl: React.FC = () => {
       </div>
 
       <div className={styles.social}>
-        {config.twitter && (
+        {config.facebook && (
           <a
-            className={styles.twitter}
-            href={`https://www.facebook.com/${config.twitter}`}
-            title={`Facebook @${config.twitter}`}
+            className={styles.facebook}
+            href={`https://www.facebook.com/${config.facebook}`}
+            title={`Facebook @${config.facebook}`}
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -72,11 +69,13 @@ export const FooterImpl: React.FC = () => {
           <a
             className={styles.twitter}
             href={`https://twitter.com/${config.twitter}`}
-            title={`Twitter @${config.twitter}`}
+            title={`X @${config.twitter}`} // Updated title
             target='_blank'
             rel='noopener noreferrer'
           >
-            <FaTwitter />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"> {/* Adjusted size */}
+              <path d="M4 3H8L12 9L16 3H20L14 12L20 21H16L12 15L8 21H4L10 12L4 3Z" />
+            </svg>
           </a>
         )}
 
