@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
     throw err
   }
 }
-
+// this will get the staticPaths
 export async function getStaticPaths() {
   if (isDev) {
     return {
